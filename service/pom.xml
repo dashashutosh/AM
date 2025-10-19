@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sabre.monorepo</groupId>
+    <artifactId>bom</artifactId>
+    <version>2025.Q2.x</version>
+    <relativePath>../../../../bom/2025.Q2.x/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.sabre.centivaamgke</groupId>
+  <artifactId>centiva-am-gke</artifactId>
+  <version>${revision}</version>
+
+  <properties>
+    <java.version>21</java.version>
+    <jdk.toolchain.id>java-21-openjdk</jdk.toolchain.id>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.sabre.monorepo</groupId>
+      <artifactId>centiva-am-api</artifactId>
+      <version>${s2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!--NGP monitoring dependencies-->
+    <dependency>
+      <groupId>com.sabre.ngp.ar.starters</groupId>
+      <artifactId>ngp-spring-boot-starter-logging</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sabre.ngp.ar.starters</groupId>
+      <artifactId>ngp-spring-boot-starter-metrics</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sabre.ngp.ar.starters</groupId>
+      <artifactId>ngp-spring-boot-starter-tracing</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.devh</groupId>
+      <artifactId>grpc-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sabre.security.ctm</groupId>
+      <artifactId>audit-logging-lib</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>service</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.sabre.centivaamgke.AgencyManagerOfferServiceApplication</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

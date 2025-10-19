@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <copy todir="/home/sabre/.cache/bazel/_bazel_sabre/38e8e139535ece1994c63a3b206915ed/execroot/_main/bazel-out/k8-fastbuild/bin/wolverine/TravelBank_AgencyManager/AgencyManager" verbose="true">
+      <fileset includes="service.jar" dir="/home/sabre/.cache/bazel/_bazel_sabre/38e8e139535ece1994c63a3b206915ed/execroot/_main/wolverine/TravelBank_AgencyManager/AgencyManager/service/target" />
+    </copy>
+  </target>
+</project>

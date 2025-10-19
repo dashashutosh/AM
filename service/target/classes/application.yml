@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: centiva-am-gke
+    version: 1.0.0-SNAPSHOT
+  profiles:
+    active: local,logs-stdout
+
+ngp:
+  tracing:
+    headers-propagation:
+      all:
+        x-request-id: false
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "health,info"
+    endpoint:
+      health:
+        show-details: always
+
+logging:
+  level:
+    root: INFO
+grpc:
+  server:
+    port: 9898
+    client:
+      agencyManager:
+        negotiationType: PLAINTEXT

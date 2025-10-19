@@ -1,0 +1,3 @@
+<configuration>
+    <include resource="com/sabre/ngp/boot/logging/logback/base.xml"/>
+</configuration>

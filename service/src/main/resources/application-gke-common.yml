@@ -1,0 +1,14 @@
+management:
+  stackdriver:
+    metrics:
+      export:
+        enabled: true
+        metric-type-prefix: "prometheus.googleapis.com/"
+
+spring:
+  cloud:
+    gcp:
+      core:
+        enabled: true
+      trace:
+        enabled: true
