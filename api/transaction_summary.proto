@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/error.proto";
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/offer_document_rs.proto";
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/transaction_type.proto";
+
+message TransactionSummary {
+  string transaction_status = 1;
+  TransactionTypes transaction_type = 2;
+  Error error = 3;
+  repeated OfferDocumentRS offer_document_rs = 4;
+}

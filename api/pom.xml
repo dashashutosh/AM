@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sabre.monorepo</groupId>
+    <artifactId>bom</artifactId>
+    <version>2025.Q2.x</version>
+    <relativePath>../../../../bom/2025.Q2.x/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>centiva-am-api</artifactId>
+  <version>${revision}</version>
+
+  <properties>
+    <java.version>21</java.version>
+    <jdk.toolchain.id>java-21-openjdk</jdk.toolchain.id>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>annotations-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <resources>
+      <resource>
+        <directory>${project.basedir}</directory>
+        <includes>
+          <include>*.proto</include>
+        </includes>
+        <targetPath>wolverine/TravelBank_AgencyManager/AgencyManager/api</targetPath>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <configuration>
+          <writeDescriptorSet>true</writeDescriptorSet>
+          <includeDependenciesInDescriptorSet>true</includeDependenciesInDescriptorSet>
+          <descriptorSetOutputDirectory>${project.build.directory}</descriptorSetOutputDirectory>
+          <descriptorSetFileName>agency_manager_proto-descriptor-set.protobin</descriptorSetFileName>
+          <protoSourceRoot>${project.build.outputDirectory}</protoSourceRoot>
+        </configuration>
+      </plugin>
+      </plugins>
+  </build>
+</project>

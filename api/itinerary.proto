@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message Itinerary {
+  string segment_number = 1;
+  string origin = 2;
+  string destination = 3;
+  string carrier_code = 4;
+  string fare_class = 5;
+  string fare_basis = 6;
+}

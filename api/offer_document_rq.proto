@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/fare_break.proto";
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/itinerary.proto";
+
+message OfferDocumentRQ {
+  string document_id = 1;
+  string document_type = 2;
+  string issue_date = 3;
+  repeated Itinerary itineraries = 4;
+  FareBreak fare_break = 5;
+  string tour_code = 6;
+}

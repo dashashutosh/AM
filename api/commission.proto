@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message Commission {
+  enum CommissionType {
+    COMMISSION_TYPE_UNDEFINED = 0;
+    COMMISSION_TYPE_TKT = 1;
+    COMMISSION_TYPE_SERVICE = 2;
+    COMMISSION_TYPE_OND = 3;
+  }
+  CommissionType commission_type = 1;
+  string amount = 2;
+}

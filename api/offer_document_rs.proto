@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/commission.proto";
+import "wolverine/TravelBank_AgencyManager/AgencyManager/api/error.proto";
+
+message OfferDocumentRS {
+  string document_id = 1;
+  string status = 2;
+  Commission commission = 3;
+  repeated Error errors = 4;
+}

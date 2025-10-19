@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message PassengerTypes {
+  enum PassengerType {
+    PASSENGER_TYPE_UNDEFINED = 0;
+    PASSENGER_TYPE_ADULT = 1;
+    PASSENGER_TYPE_CHILD = 2;
+    PASSENGER_TYPE_INFANT = 3;
+  }
+  PassengerType passenger_type = 1;
+}

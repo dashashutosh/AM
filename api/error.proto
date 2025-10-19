@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message Error {
+  string code = 1;
+  string severity = 2;
+  string message = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message TransactionTypes {
+  enum TransactionType {
+    TRANSACTION_TYPE_UNDEFINED = 0;
+    TRANSACTION_TYPE_SALE = 1;
+    TRANSACTION_TYPE_REFUND = 2;
+    TRANSACTION_TYPE_EXCHANGE = 3;
+  }
+  TransactionType transaction_type = 1;
+}

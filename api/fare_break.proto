@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.sabre.centiva.offer.gke.api;
+
+message FareBreak {
+  string base_fare = 1;
+  string total_tax = 2;
+  string total_fee = 3;
+}
